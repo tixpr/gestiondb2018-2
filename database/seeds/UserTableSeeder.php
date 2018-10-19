@@ -12,7 +12,7 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         for($i=1;$i<=1000;$i++){
-            DB::table('users')->insert([
+            DB::table('user')->insert([
             'email'         => 'usuario' .$i.'@gmail.com',
             'password'      => bcrypt('12345'),
             'create_at'      => now(),
