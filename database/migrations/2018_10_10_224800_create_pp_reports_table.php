@@ -18,7 +18,7 @@ class CreatePpReportsTable extends Migration
 			$table -> unsignedTinyInteger ('tipo');
 			$table -> timestamps ();
 			$table -> unsignedBigInteger ('pp_p_projection_id');
-			$table -> foreign ('pp_p_projection_id') -> references ('id') -> on ('pp_p_projections');;
+			$table -> foreign ('pp_p_projection_id') -> references ('id') -> on ('pp_p_projections');
         });
     }
 
