@@ -15,11 +15,11 @@ class CreateMentorsTable extends Migration
     {
         Schema::create('mentors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('create_at')
-            $table->unsignedBigInteger('users_id');
-            $table->unsignedBigInteger('pp_projections_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('pp_projections_id')->references('id')->on('users');
+            $table->unsignedBigInteger('pp_projection_id');
+            $table->foreing('pp_projection_id')->references('id')->on('pp_projections');
+            $table->unsignedBigInteger('user_id');
+            $table->foreing('user_id')->references('id')->on('users');
+            $table->date('created_at');   
         });
     }
 
