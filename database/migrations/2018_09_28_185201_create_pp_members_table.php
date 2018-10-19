@@ -16,9 +16,9 @@ class CreatePpMembersTable extends Migration
         Schema::create('pp_members', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('pp_projection_id');
+            $table->unsignedBigInteger('pp_projections_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('pp_projection_id')->references('id')->on('pp_projections');
+            $table->foreign('pp_projections_id')->references('id')->on('pp_projections');
 
         });
     }

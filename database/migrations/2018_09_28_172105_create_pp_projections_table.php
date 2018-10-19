@@ -20,7 +20,7 @@ class CreatePpProjectionsTable extends Migration
             $table->timestamps();
             $table->date('exit_at');
             $table->boolean('is_exit')-> default(false);
-            $table->boolean('is_pratice',200);
+            $table->boolean('is_practice',200);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')-> on ('users');           
         });

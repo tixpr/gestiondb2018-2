@@ -16,9 +16,9 @@ class CreatePpRevisersTable extends Migration
         Schema::create('pp_revisers', function (Blueprint $table) {
             $table->timestamps();                
         	$table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('pp_projection_id');
+            $table->unsignedBigInteger('pp_projections_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('pp_projection_id')->references('id')->on('pp_projections');
+            $table->foreign('pp_projections_id')->references('id')->on('pp_projections');
 
         });
     }
