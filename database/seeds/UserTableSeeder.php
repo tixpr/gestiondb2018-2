@@ -11,13 +11,16 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'email' 		=> str_random(10).'@gmail.com',
-			'password' 		=> bcrypt('12345'),
-			'created_at'	=> now(),
-			'updated_at'	=> now(),
-			'username'		=> str_random(15),
-			'is_valid'		=> true
-        ]);
+        
+        for($i=1;$i<=500;$i++){
+            DB::table('users')->insert([
+                'email' 		=> 'usuario'.$i.'@gmail.com',
+                'password' 		=> bcrypt('12345'),
+                'created_at'	=> now(),
+                'updated_at'	=> now(),
+                'username'		=> str_random(15),
+                'is_valid'		=> true
+            ]);
+        }
     }
 }
