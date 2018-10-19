@@ -18,7 +18,7 @@ class CreateRevisersTable extends Migration
             $table->unsignedTinyInteger('type');
             $table->timestamps();
             $table->unsignedBigInteger('pp_projection_id');
-            $table->foreing('pp_projection_id')->references('id')->on('pp_projections');
+            $table->foreign('pp_projection_id')->references('id')->on('pp_projections');
         });
     }
 

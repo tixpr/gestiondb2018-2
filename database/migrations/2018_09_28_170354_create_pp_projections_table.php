@@ -22,7 +22,7 @@ class CreatePpProjectionsTable extends Migration
             $table->boolean('is_exit')->default(false);
             $table->boolean('is_practice');
             $table->unsignedBigInteger('user_id');
-            $table->foreing('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
