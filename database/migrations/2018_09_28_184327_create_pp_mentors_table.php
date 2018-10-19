@@ -20,6 +20,7 @@ class CreatePpMentorsTable extends Migration
 			$table->unsignedBigInteger('pp_projection_id');
 			$table->foreign('user_id')->references('id')->on('users');
 			$table->foreign('pp_projection_id')->references('id')->on('pp_projections');
+			
         });
     }
 
