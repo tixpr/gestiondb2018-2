@@ -15,8 +15,8 @@ class CreateMentorsTable extends Migration
     {
         Schema::create('mentors', function (Blueprint $table) {
             $table->bigincrements('id');
-            $table->unsignedBigInteger('pp_projections_id');
-            $table->foreign('pp_projections_id')->references('id')->on('pp_projections');
+            $table->unsignedBigInteger('pp_p_projections_id');
+            $table->foreign('pp_p_projections_id')->references('id')->on('pp_p_projections');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
