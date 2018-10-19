@@ -14,15 +14,15 @@ class CreatePpProjectionsTable extends Migration
     public function up()
     {
         Schema::create('pp_projections', function (Blueprint $table) {
-            $table -> bigIncrements ( ' id ' );
-			$table -> string ( ' título ' , 200 );
-			$table -> string ( ' organización ' , 200 );
-			$table -> timestamps ();
-			$table -> date ( ' exit_at ' );
-			$table -> boolean ( ' is_exit ' ) -> default ( false );
-			$table -> boolean ( ' is_practice ' );
-			$table -> unsignedBigInteger ( ' user_id ' );
-			$table -> foreign ( ' user_id ' ) -> references ( ' id ' ) -> on ( ' usuarios ' );
+			$table->bigIncrements('id');
+			$table->string('title',200);
+			$table->string('organization',200);
+			$table->timestamps();
+			$table->date('exit_at');
+			$table->boolean('is_exit')->default(false);
+			$table->boolean('is_practice');
+			$table->unsignedBigInteger('user_id');
+			$table->foreign('user_id')->references('id')->on('users');
         });
     }
 

@@ -14,12 +14,12 @@ class CreatePpRevisersTable extends Migration
     public function up()
     {
         Schema::create('pp_revisers', function (Blueprint $table) {
-            $table-> bigIncrements ( ' id ' );
-			$table-> timestamps ();
-			$table-> unsignedBigInteger ( ' user_id ' );
-			$table-> unsignedBigInteger ( ' pp_projection_id ' );
-			$table-> foreign ( ' user_id ' ) -> references ( ' id ' ) -> on ( ' usuarios ' );
-			$table-> foreign ( ' pp_projection_id ' ) -> references ( ' id ' ) -> on ( ' pp_projections ' );
+            $table->bigIncrements('id');
+			$table->timestamps();
+			$table->unsignedBigInteger('user_id');
+			$table->unsignedBigInteger('pp_projection_id');
+			$table->foreign('user_id')->references('id')->on('users');
+			$table->foreign('pp_projection_id')->references('id')->on('pp_projections');
         });
     }
 
