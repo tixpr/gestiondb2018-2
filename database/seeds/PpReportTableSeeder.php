@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class UserTableSeeder extends Seeder
+class PpReportTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -10,15 +10,13 @@ class UserTableSeeder extends Seeder
      * @return void
      */
     public function run()
-     {      
+    {      
         for($i=1;$i<=100;$i++){
-    		DB::table('users')->insert([
-            'email' => 'usuario'.$i.'@gmail.com',
-            'password' => bcrypt('12345'),
+    		DB::table('pp_reports')->insert([
+    		'type'	=> random_int(15),
             'created_at' => now(),
             'updated_at' => now(),
-            'username' => str_random(15),
-            'is_valid' => true
+            'pp_projection_id'=> random_int(1,100)
         ]);
 
         }

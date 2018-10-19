@@ -21,6 +21,9 @@ class CreatePpProjectionsTable extends Migration
             $table->date('exit_at');
             $table->boolean('is_exit')->default(false);
             $table->boolean('is_practice');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+
 
         });
     }
