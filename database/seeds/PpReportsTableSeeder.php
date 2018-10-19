@@ -15,6 +15,7 @@ class PpReportsTableSeeder extends Seeder
             DB::table('pp_reports')->insert([
                 'created_at'=>now(),
                 'updated_at'=>now(),
+                'type'=>random_int(1,3),
                 'pp_projection_id'=>random_int(1,20),
             ]);
            

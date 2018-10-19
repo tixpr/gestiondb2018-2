@@ -16,7 +16,7 @@ class RevisersTableSeeder extends Seeder
                 'created_at'=>now(),
                 'updated_at'=> now(),
                 'user_id'=>random_int(1,20),
-                'pp_projection_id'=>random(1,20),
+                'pp_projection_id'=>random_int(1,20),
             ]);
         }
     }

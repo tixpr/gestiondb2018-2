@@ -15,7 +15,7 @@ class CreatePpReportsTable extends Migration
     {
         Schema::create('pp_reports', function (Blueprint $table) {
             $table -> bigIncrements ('id');
-			$table -> unsignedTinyInteger ('tipo');
+			$table -> unsignedTinyInteger ('type');
 			$table -> timestamps ();
 			$table -> unsignedBigInteger ('pp_projection_id');
 			$table -> foreign ('pp_projection_id') -> references ('id') -> on ('pp_projections');
