@@ -14,8 +14,11 @@ class CreatePpReportsTable extends Migration
     public function up()
     {
         Schema::create('pp_reports', function (Blueprint $table) {
-            $table->increments('id');
+            $table->biIncrements('id');
+            $table->unsignedTinyInteger('type');
             $table->timestamps();
+            $table->unsignedBigInteger('pp_projection_id');
+            $table->foreing('pp_projection_id')->references('id')->on('pp_projections');
         });
     }
 
