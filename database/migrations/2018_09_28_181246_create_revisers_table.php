@@ -14,7 +14,7 @@ class CreateRevisersTable extends Migration
     public function up()
     {
         Schema::create('revisers', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigincrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('pp_projections_id');
             $table->foreign('pp_projections_id')->references('id')->on('pp_projections');

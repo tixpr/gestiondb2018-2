@@ -14,12 +14,12 @@ class CreateMentorsTable extends Migration
     public function up()
     {
         Schema::create('mentors', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
+			$table->date('created_at');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('pp_projections_id');
-            $table->foreign('pp_projections_id')->references('id')->on('pp_projections');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->timestamps();
+			$table->unsignedBigInteger('pp_projection_id');
+			$table->foreign('user_id')->references('id')->on('users');
+			$table->foreign('pp_projection_id')->references('id')->on('pp_projections');
         });
     }
 
