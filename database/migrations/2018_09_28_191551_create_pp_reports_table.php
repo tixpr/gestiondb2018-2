@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRevisersTable extends Migration
+class CreatePpReportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateRevisersTable extends Migration
      */
     public function up()
     {
-        Schema::create('revisers', function (Blueprint $table) {
+        Schema::create('pp_reports', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedTinyInteger('type');
-            $table->timestamps();
-            $table->unsignedBigInteger('pp_projection_id');
-            $table->foreign('pp_projection_id')->references('id')->on('pp_projections');
+			$table->unsignedTinyInteger('type');
+			$table->timestamps();
+			$table->unsignedBigInteger('pp_projection_id');
+			$table->foreign('pp_projection_id')->references('id')->on('pp_projections');
         });
     }
 
@@ -29,6 +29,6 @@ class CreateRevisersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('revisers');
+        Schema::dropIfExists('pp_reports');
     }
 }
