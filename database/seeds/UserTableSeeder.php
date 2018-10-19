@@ -18,7 +18,7 @@ class UserTableSeeder extends Seeder
             'created_at'      => now(),
             'updated_at'      => now(),
             'username'      => str_random(15),
-            'is_Valid'      => true,
+            'is_valid'      => true,
             ]);
         }   
     }
