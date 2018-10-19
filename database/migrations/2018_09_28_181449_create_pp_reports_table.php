@@ -17,7 +17,7 @@ class CreatePpReportsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->unsignedBigInteger('pp_projections_id');
-            $table->foreign('pp_projections_id')->references('id')->on('projections');
+            $table->foreign('pp_projections_id')->references('id')->on('pp_projections');
         });
     }
 

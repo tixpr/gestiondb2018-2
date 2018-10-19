@@ -19,7 +19,7 @@ class CreateMembersTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('pp_projections_id');
-            $table->foreign('pp_projections_id')->references('id')->on('projections');
+            $table->foreign('pp_projections_id')->references('id')->on('pp_projections');
         });
     }
 
