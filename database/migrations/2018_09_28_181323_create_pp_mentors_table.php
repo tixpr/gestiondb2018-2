@@ -1,10 +1,8 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
-class CreateRevisersTable extends Migration
+class CreatePpMentorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +11,16 @@ class CreateRevisersTable extends Migration
      */
     public function up()
     {
-        Schema::create('revisers', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::create('pp_mentors', function (Blueprint $table) {
+			$table->bigIncrements('id');
+			$table->date('created_at');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('pp_projections_id');
-            $table->foreign('pp_projections_id')->references('id')->on('pp_projections');
+			$table->unsignedBigInteger('pp_projection_id');
+			$table->foreign('pp_projection_id')->references('id')->on('pp_projections');
+			
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -30,6 +28,6 @@ class CreateRevisersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('revisers');
+        Schema::dropIfExists('pp_mentors');
     }
 }

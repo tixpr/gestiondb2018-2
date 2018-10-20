@@ -13,11 +13,12 @@ class reviserTableSeeder extends Seeder
     {
         {
             for($i=1;$i<=20;$i++){
-            DB::table('pp_projections')->insert([
-                'created_at'=> now(),
-                'updated_at' => now(),
-                'pp_projections_id' =>random_int(1,10),
+            DB::table('pp_revisers')->insert([
+                'pp_projection_id' =>random_int(1,10),
                 'user_id' =>random_int(1,10), 
+                'created_at'=> now(),
+                'updated_at' => now()
+                
             ]);
             }
     }

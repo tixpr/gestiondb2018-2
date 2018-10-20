@@ -12,10 +12,10 @@ class memberTableSeeder extends Seeder
     public function run()
     {
         for($i=1;$i<=20;$i++){
-            DB::table('pp_projections')->insert([
-                'pp_projections_id' =>random_int(1,10),
-                'user_id' =>random_int(1,10), 
+            DB::table('pp_members')->insert([
+                'pp_projection_id' =>random_int(1,10),
+                'user_id' =>random_int(1,10)
             ]);
-            }
+        }
     }
 }
