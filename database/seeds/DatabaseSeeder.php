@@ -11,11 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(usertableseeder::class);
-        $this->call(ppprojectionstableseeder::class);
+        $this->call(PpProjectionTableSeeder::class);
         $this->call(ppmentorstableseeder::class);
         $this->call(ppmemberstableseeder::class);
         $this->call(ppreviserstableseeder::class);
         $this->call(ppreportstableseeder::class);
+        $this->call(userTableseeder::class);
     }
 }
