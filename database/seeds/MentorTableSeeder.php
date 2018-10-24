@@ -17,9 +17,8 @@ class MentorTableSeeder extends Seeder
                
                 'created_at'=>now(),
                 'user_id'=>random_int(1,1000),
-                'pp_projection_id'=>random_int(1,1000),
-                'users'=>random_int(1,1000),
-                'pp_projections'=>random_int(1,1000)
+                'pp_projection_id'=>random_int(1,1000)
+                
             ]);
 
         

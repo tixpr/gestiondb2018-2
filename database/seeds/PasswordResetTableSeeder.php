@@ -12,16 +12,17 @@ class PasswordResetTableSeeder extends Seeder
     public function run()
     {
         
-
+        for($i=1;$i<=1000;$i++){
             DB::table('password_resets')->insert([
+
                 'email' => 'usuario' .$i.'@gmail.com',
                 
                 'created_at'=>now(),
         
-                'token'=>str_random(15),
+                'token'=>str_random(15)
                 
             ]);
-
+        }
         
     }
 }
