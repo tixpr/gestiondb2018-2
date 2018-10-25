@@ -15,7 +15,7 @@ class ReviserTableSeeder extends Seeder
         for($i=1;$i<=1000;$i++){
             DB::table('revisers')->insert([
                 'user_id' => random_int(1,1000),
-                'pp_projection_id'=>random_int(1,1000),
+                'pp_projection_id'=>random_int(1,2000),
                 'created_at'=> now(),
                 'updated_at' => now()
                 

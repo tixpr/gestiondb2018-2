@@ -12,14 +12,16 @@ class MentorTableSeeder extends Seeder
     public function run()
     {
         
-       
+       for ($i=0; $i < 100; $i++) { 
             DB::table('mentors')->insert([
-               
+                
                 'created_at'=>now(),
                 'user_id'=>random_int(1,1000),
-                'pp_projection_id'=>random_int(1,1000)
+                'pp_projection_id'=>random_int(1,2000)
                 
             ]);
+       }
+           
 
         
     }

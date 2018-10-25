@@ -16,9 +16,6 @@ class DatabaseSeeder extends Seeder
          $this->call(ReviserTableSeeder::class);
          $this->call(MemberTableSeeder::class);
          $this->call(MentorTableSeeder::class);
-         $this->call(PasswordResetTableSeeder::class);
-         
-         $this->call(PpReportsTableSeeder::class);
-         
+         $this->call(PpReportTableSeeder::class);
     }
 }
