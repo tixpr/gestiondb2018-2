@@ -11,7 +11,7 @@ class PpProjectionTableSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i<=1000;$i++){
+        for($i=1;$i<=100;$i++){
             DB::table('pp_projections')->insert([
                 'title'         => str_random(12),
                 'organization'  => str_random(15),
