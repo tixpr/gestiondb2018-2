@@ -14,7 +14,7 @@ class CreatePpProjectionsTable extends Migration
     public function up()
     {
         Schema::create('pp_projections', function (Blueprint $table) {
-            $table->bigIncrements('id');
+			$table->bigIncrements('id');
 			$table->string('title',200);
 			$table->string('organization',200);
 			$table->timestamps();
