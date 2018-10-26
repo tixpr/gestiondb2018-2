@@ -6,7 +6,7 @@ use App\Models\PpReviser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class PpReviserController extends Controller
 {
     /**
      * Display a listing of the resource.
