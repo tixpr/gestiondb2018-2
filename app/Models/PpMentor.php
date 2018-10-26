@@ -18,7 +18,9 @@ class PpMentor extends Model
      * @var array
      */
     protected $fillable = [
-        'created_at'
+        'created_at',
+        'user_id',
+        'pp_projection_id'
     ];
 
     /**
@@ -29,4 +31,7 @@ class PpMentor extends Model
     protected $hidden = [
         'id' 
     ];
+    
+    public $timestamps = true;
+    
 }

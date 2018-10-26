@@ -15,7 +15,7 @@ class mentorTableSeeder extends Seeder
             DB::table('pp_mentors')->insert([
                 'pp_projection_id' =>random_int(1,10),
                 'user_id' =>random_int(1,10), 
-                'created_at'=> now()
+                'created_at'=> now(),
             ]);
             }
         }

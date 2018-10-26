@@ -18,6 +18,8 @@ class PpMember extends Model
      * @var array
      */
     protected $fillable = [
+        'pp_projection_id',
+        'user_id'
        
     ];
 
@@ -29,4 +31,5 @@ class PpMember extends Model
     protected $hidden = [
         'id' 
     ];
+    public $timestamps = false;
 }
