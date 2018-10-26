@@ -15,7 +15,7 @@ class CreateRevisersTable extends Migration
     {
         Schema::create('revisers', function (Blueprint $table) {
             $table -> bigIncrements('id');
-			$table -> timestamps ();
+			$table -> timestamps (); 
 			$table -> unsignedBigInteger ('user_id');
 			$table -> unsignedBigInteger ('pp_p_projection_id');
 			$table -> foreign ('user_id') -> references ('id') -> on ('users');
