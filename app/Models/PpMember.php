@@ -17,6 +17,7 @@ class PpMember extends Model
      *
      * @var array
      */
+    public $timestamps = false;
     protected $fillable = [
     'user_id',
     'pp_projection_id',

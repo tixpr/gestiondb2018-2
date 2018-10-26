@@ -17,7 +17,9 @@ class PpMentor extends Model
      *
      * @var array
      */
+    public $timestamps = false;
     protected $fillable = [
+        'created_at',
         'user_id',
         'pp_projection_id',
     ];
