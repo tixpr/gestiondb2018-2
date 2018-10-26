@@ -32,4 +32,5 @@ class PpMentor extends Model
     protected $hidden = [
         'id'
     ];
+    public $timestamps =false;
 }

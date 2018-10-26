@@ -20,7 +20,7 @@ class PpMember extends Model
     protected $fillable = [ 
         'user_id',
         'pp_projections_id' 
-                     
+                      
     ];
 
     /**
@@ -31,4 +31,5 @@ class PpMember extends Model
     protected $hidden = [
         'id'
     ];
+    public $timestamps = false; 
 }

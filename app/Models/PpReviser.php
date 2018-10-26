@@ -29,6 +29,6 @@ class PpReviser extends Model
      * @var array
      */
     protected $hidden = [
-        
+        'id'
     ];
 }
