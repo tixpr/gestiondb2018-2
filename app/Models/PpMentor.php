@@ -18,7 +18,7 @@ class PpMentor extends Model
      * @var array
      */
     protected $fillable = [
-        'updated_at'=false,
+
     ];
 
     /**

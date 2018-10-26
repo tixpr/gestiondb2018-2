@@ -16,7 +16,7 @@ class CreatePpProjectionsTable extends Migration
 			$table->string('title',200);
 			$table->string('organization',200);
 			$table->timestamps();
-			$table->date('exit_at');
+			$table->date('exit_at')->nullable();
 			$table->boolean('is_exit')->default(false);
 			$table->boolean('is_practice');
 			$table->unsignedBigInteger('user_id');
