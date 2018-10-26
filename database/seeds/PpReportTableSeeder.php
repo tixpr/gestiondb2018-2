@@ -11,14 +11,13 @@ class PpReportTableSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i>=100;$i++)
-        {
+        for($i=1;$i<=30;$i++){
             DB::table('pp_reports')->insert([
-        'pp_projection_id' => random_int(1,200),
-        'created_at' => now(),
-        'updated_at' => now(),
-        'type' => random_int(1,100)
+                'type' => random_int(1,10), 
+                'created_at'=> now(),
+                'updated_at' => now(),
+                'pp_projection_id' =>random_int(1,10)  
             ]);
+            }
     }
-}
 }
