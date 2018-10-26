@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Mentors extends Model
 {
     //
+    public $timestamps=true;
     protected $table='mentors';
     /**
      * The attributes that are mass assignable.
@@ -15,7 +16,7 @@ class Mentors extends Model
      */
     protected $fillable = [
        'pp_projections_id',
-       'create_at',
+       'user_id'
     ];
 
     /**

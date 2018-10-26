@@ -7,14 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Members extends Model
 {
     //
+    public $timestamps=false;
     protected $table='members';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+  
     protected $fillable = [
-        'username',
         'user_id',
         'pp_projection_id'
     ];

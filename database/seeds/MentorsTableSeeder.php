@@ -15,7 +15,6 @@ class MentorsTableSeeder extends Seeder
             DB:: table('mentors')->insert([
                 'created_at'    => now(),
                 'updated_at'    =>now(),
-                'create_at' =>now(),
                 'pp_projections_id' => random_int(1,100),
                 'user_id'   =>random_int(1,100),
             ]);
