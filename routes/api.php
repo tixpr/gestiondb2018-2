@@ -15,9 +15,9 @@ use Illuminate\Http\Request;
 Route::namespace('Api')->group(function(){
     Route::prefix('user')->group(function(){
         Route::get('/','UserController@Index');
-        Route::post('user','UserController@store');
-        Route::get('user/{id}','UserController@show');
-        Route::put('user/{id}','UserController@update');
-        Route::delete('user/{id}','UserController@destroy');
+        Route::post('/','UserController@store');
+        Route::get('{id}','UserController@show');
+        Route::put('{id}','UserController@update');
+        Route::delete('{id}','UserController@destroy');
     });
 });
