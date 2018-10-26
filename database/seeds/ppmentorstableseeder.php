@@ -11,11 +11,11 @@ class ppmentorstableseeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i>=100;$i++)
+        for($i=1;$i<=1000;$i++)
         {
             DB::table('pp_mentors')->insert([
                'created_at' => now(),
-               'useri_id' => random_int(1,100),
+               'user_id' => random_int(1,100),
                'pp_projection_id' => random_int(1,200)
             ]);
     }

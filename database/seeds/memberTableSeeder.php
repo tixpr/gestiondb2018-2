@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ppmemberstableseeder extends Seeder
+class memberTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,12 +11,11 @@ class ppmemberstableseeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i>=100;$i++)
-        {
+        for($i=1;$i<=20;$i++){
             DB::table('pp_members')->insert([
-               'user_id' => random_int(1,100),
-               'pp_projection_id' => random_int(1,200)
+                'pp_projection_id' =>random_int(1,10),
+                'user_id' =>random_int(1,10)
             ]);
-    }
+        }
     }
 }
