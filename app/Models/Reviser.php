@@ -12,6 +12,15 @@ class Reviser extends Model
      * @var array
      */
     protected $table = 'revisers';
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'user_id',
+        'pp_projections_id'
+    ];
     
     /**
      * The attributes that should be hidden for arrays.

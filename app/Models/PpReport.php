@@ -13,7 +13,8 @@ class PpReport extends Model
      */
     protected $table = 'pp_reports';
     protected $fillable = [
-        'type'
+        'type',
+        'pp_projection_id'
         
     ];
     /**

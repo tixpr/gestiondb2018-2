@@ -11,9 +11,14 @@ class Mentor extends Model
      *
      * @var array
      */
-    protected $table = 'mentors';
-    protected $fillable = [
-        'created_at', 
+    
+    public $timestamps=false;
+    protected $fillable = [ 
+        'user_id',
+        'pp_projection_id'
+        
+        
+
         
     ];
     /**
@@ -22,6 +27,7 @@ class Mentor extends Model
      * @var array
      */
     protected $hidden = [
-        'id'
+        'id',
+        'created_at'
     ];
 }

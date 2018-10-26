@@ -19,7 +19,8 @@ class CreateMembersTable extends Migration
             $table->unsignedBigInteger('pp_projections_id');
             $table->foreign('pp_projections_id')->references('id')->on('pp_projections');
             $table->foreign('user_id')->references('id')->on('users');
-            
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('created_at')->nullable();
         });
     }
 

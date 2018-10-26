@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class mentorTableSeeder extends Seeder
+class PpMentorTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,6 +18,5 @@ class mentorTableSeeder extends Seeder
                 'created_at'=> now()
             ]);
             }
-        }
     }
-
+}

@@ -19,7 +19,8 @@ class CreateMentorsTable extends Migration
             $table->unsignedBigInteger('user_id');
 			$table->unsignedBigInteger('pp_projection_id');
 			$table->foreign('user_id')->references('id')->on('users');
-			$table->foreign('pp_projection_id')->references('id')->on('pp_projections');
+            $table->foreign('pp_projection_id')->references('id')->on('pp_projections');
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

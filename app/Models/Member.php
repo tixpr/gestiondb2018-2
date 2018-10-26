@@ -13,6 +13,15 @@ class Member extends Model
      */
     protected $table = 'members';
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'user_id',
+        'pp_projections_id'
+    ];
+    /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
