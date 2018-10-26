@@ -11,15 +11,17 @@ class PpMember extends Model
      *
      * @var string
      */
-    protected $table = 'pp_projections';
+    protected $table = 'pp_members';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+    public $timestamps = false;
     protected $fillable = [
         'user_id',
         'pp_projection_id',
+
     ];
 
     /**
@@ -29,5 +31,6 @@ class PpMember extends Model
      */
     protected $hidden = [
         'id',
+        
     ];
 }

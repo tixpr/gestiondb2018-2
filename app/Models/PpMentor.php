@@ -11,14 +11,16 @@ class PpMentor extends Model
      *
      * @var string
      */
-    protected $table = 'pp_projections';
+    protected $table = 'pp_mentors';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+    public $timestamps = false;
     protected $fillable = [
-        'user_id', 
+        'created_at',
+        'user_id',
         'pp_projection_id',
     ];
 
