@@ -22,7 +22,8 @@ class PpProjection extends Model
         'organization',
         'exit_at',
         'is_exit',
-        'is_practice'
+        'is_practice',
+        'user_id'
     ];
 
     /**
