@@ -6,7 +6,7 @@ use App\Models\PpMember;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class Usercontroller extends Controller
+class PpMembercontroller extends Controller
 {
     /**
      * Display a listing of the resource.

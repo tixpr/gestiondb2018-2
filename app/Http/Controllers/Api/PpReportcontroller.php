@@ -6,7 +6,7 @@ use App\Models\PpReport;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class Usercontroller extends Controller
+class PpReportcontroller extends Controller
 {
     /**
      * Display a listing of the resource.
