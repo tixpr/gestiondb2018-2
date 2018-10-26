@@ -24,7 +24,8 @@ class PpProjection extends Model
           'exit_at',
           'is_exit',
           'is_practice',
-    ];
+          'user_id',
+            ];
 
     /**
      * The attributes that should be hidden for arrays.

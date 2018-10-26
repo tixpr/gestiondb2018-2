@@ -18,7 +18,8 @@ class PpMember extends Model
      * @var array
      */
     protected $fillable = [
-
+    'user_id',
+    'pp_projection_id',
     ];
 
     /**
