@@ -15,7 +15,10 @@ class PpReport extends Model
      * @var array
      */
     protected $fillable = [
-        'type'
+        'type',
+        'created_at',
+        'updated_at',
+        'pp_projection_id'
     ];
     /**
      * The attributes that should be hidden for arrays.
