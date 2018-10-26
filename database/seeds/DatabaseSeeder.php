@@ -17,4 +17,3 @@ class DatabaseSeeder extends Seeder
         $this->call(PpMentorTableSeeder::class);
     }
 }
-
