@@ -52,7 +52,6 @@ class PpReportController extends Controller
     {
         return PpReport::find($id)->update($request->all());
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -62,5 +61,6 @@ class PpReportController extends Controller
     public function destroy($id)
     {
         return PpReport::find($id)->delete();
-    }
+        
+    }  
 }
