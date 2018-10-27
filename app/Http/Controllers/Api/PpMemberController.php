@@ -17,8 +17,6 @@ class PpMemberController extends Controller
         return PpMember::all();
     }
 
-    
-
     /**
      * Store a newly created resource in storage.
      *
@@ -41,7 +39,6 @@ class PpMemberController extends Controller
         return PpMember::find($id);
     }
 
-    
     /**
      * Update the specified resource in storage.
      *
@@ -52,6 +49,7 @@ class PpMemberController extends Controller
     public function update(Request $request, $id)
     {
         return PpMember::find($id)->update($request->all());
+        
     }
 
     /**
