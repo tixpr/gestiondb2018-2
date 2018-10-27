@@ -4,25 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PpProjection extends Model
-{/**
+class PpMentor extends Model
+{
+    /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'pp_projections';
+    protected $table = 'pp_mentors';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'title', 
-        'organization', 
-        'exit_at',
-        'is_exit',
-        'is_practice',
-        'user_id'
+        'created_at', 
+        'user_id',
+        'pp_projections_id' 
+                     
     ];
 
     /**
@@ -33,4 +32,5 @@ class PpProjection extends Model
     protected $hidden = [
         'id'
     ];
+    public $timestamps =false;
 }

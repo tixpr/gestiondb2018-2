@@ -14,6 +14,7 @@ class CreatePpRevisersTable extends Migration
     public function up()
     {
         Schema::create('pp_revisers', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->timestamps();                
         	$table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('pp_projections_id');
