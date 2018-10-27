@@ -20,6 +20,7 @@ class UserTableSeeder extends Seeder
             'username' => str_random(15),
             'is_valid'  => true
         ]);
+        
         }
     }
 }
