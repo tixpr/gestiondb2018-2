@@ -18,6 +18,7 @@ class PpReport extends Model
      * @var array
      */
     protected $fillable = [
+        
         'type', 
         'pp_projections_id', 
                      

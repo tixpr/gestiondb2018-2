@@ -18,6 +18,7 @@ class PpMember extends Model
      * @var array
      */
     protected $fillable = [ 
+        
         'user_id',
         'pp_projections_id' 
                       

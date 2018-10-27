@@ -19,6 +19,7 @@ class PpReviser extends Model
      */
     protected $fillable = [
         'user_id', 
+        
         'pp_projections_id', 
                      
     ];

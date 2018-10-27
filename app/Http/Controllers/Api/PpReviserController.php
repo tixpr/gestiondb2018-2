@@ -26,6 +26,7 @@ class PpReviserController extends Controller
      */
     public function store(Request $request)
     {
+        
         return PpReviser::create($request->all);
     }
 

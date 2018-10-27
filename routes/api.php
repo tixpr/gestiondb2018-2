@@ -15,12 +15,12 @@ use Illuminate\Http\Request;
 Route::namespace('Api')->group(function(){
     Route::prefix('user')->group(function(){
         Route::get('/','UserController@index');
-        Route::post('/','UserController@store');
-        
+        Route::post('/','UserController@store');     
         Route::get('{id}','UserController@show');
         Route::put('{id}','UserController@update');
         Route::delete('{id}','UserController@destroy');
     });
+    
     Route::prefix('pp_projection')->group(function(){
         Route::get('/','PpProjectionController@index');
         Route::post('/','PpProjectionController@store');
@@ -28,6 +28,7 @@ Route::namespace('Api')->group(function(){
         Route::put('{id}','PpProjectionController@update');
         Route::delete('{id}','PpProjectionController@destroy');
     });
+
     Route::prefix('pp_report')->group(function(){
         Route::get('/','PpReportController@index');
         Route::post('/','PpReportController@store');
@@ -35,6 +36,7 @@ Route::namespace('Api')->group(function(){
         Route::put('{id}','PpReportController@update');
         Route::delete('{id}','PpReportController@destroy');
     });
+
     Route::prefix('pp_reviser')->group(function(){
         Route::get('/','PpReviserController@index');
         Route::post('/','PpReviserController@store');
@@ -42,6 +44,7 @@ Route::namespace('Api')->group(function(){
         Route::put('{id}','PpReviserController@update');
         Route::delete('{id}','PpReviserController@destroy');
     });
+
     Route::prefix('pp_mentor')->group(function(){
         Route::get('/','PpMentorController@index');
         Route::post('/','PpMentorController@store');
@@ -49,6 +52,7 @@ Route::namespace('Api')->group(function(){
         Route::put('{id}','PpMentorController@update');
         Route::delete('{id}','PpMentorController@destroy');
     });
+
     Route::prefix('pp_member')->group(function(){
         Route::get('/','PpMemberController@index');
         Route::post('/','PpMemberController@store');
@@ -56,4 +60,5 @@ Route::namespace('Api')->group(function(){
         Route::put('{id}','PpMemberController@update');
         Route::delete('{id}','PpMemberController@destroy');
     });
+    
 });

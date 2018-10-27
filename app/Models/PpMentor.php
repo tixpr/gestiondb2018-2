@@ -18,6 +18,7 @@ class PpMentor extends Model
      * @var array
      */
     protected $fillable = [
+        
         'created_at', 
         'user_id',
         'pp_projections_id' 

@@ -17,6 +17,7 @@ class PpProjection extends Model
      * @var array
      */
     protected $fillable = [
+        
         'title', 
         'organization', 
         'exit_at',

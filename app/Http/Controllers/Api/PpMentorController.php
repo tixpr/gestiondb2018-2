@@ -50,6 +50,7 @@ class PpMentorController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         return PpMentor::find($id)->update($request->all());
     }
 

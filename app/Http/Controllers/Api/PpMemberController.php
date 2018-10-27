@@ -50,6 +50,7 @@ class PpMemberController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         return PpMember::find($id)->update($request->all());
     }
 

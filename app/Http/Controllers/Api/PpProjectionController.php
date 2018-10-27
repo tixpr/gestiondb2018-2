@@ -15,6 +15,7 @@ class PpProjectionController extends Controller
      */
     public function index()
     {
+        
         return PpProjection::all();
     }
 
