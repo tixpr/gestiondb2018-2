@@ -1,20 +1,22 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-
+use App\Models\Reviser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\ReviserResource;
 
 class ReviserController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+  *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return Reviser::all();
+        
+        return ReviserResource::collection(Reviser::all());
         
     }
 
@@ -38,7 +40,7 @@ class ReviserController extends Controller
      */
     public function show($id)
     {
-        return Reviser::find($id);
+        return new ReviserResource( Reviser::find($id));
     }
 
     /**

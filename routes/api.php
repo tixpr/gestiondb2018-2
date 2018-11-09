@@ -23,7 +23,7 @@ Route::namespace('Api')->group(function(){
 });
 });
 Route::namespace('Api')->group(function(){
-    Route::prefix('pp_p_projections')->group(function(){
+    Route::prefix('pp_p_projection')->group(function(){
     Route::get('/','PpPProjectionController@index');
     Route::post('/','PpPProjectionController@store');
     Route::get('{id}','PpPProjectionController@show');
@@ -50,6 +50,7 @@ Route::namespace('Api')->group(function(){
     Route::delete('{id}','ReviserController@destroy');
 });
 });
+
 Route::namespace('Api')->group(function(){
     Route::prefix('mentor')->group(function(){
     Route::get('/','MentorController@index');
