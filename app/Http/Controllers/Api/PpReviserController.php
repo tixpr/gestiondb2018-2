@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 use App\Models\PpReviser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\UserAdmin as UserResource;
+
 
 class PpReviserController extends Controller
 {
