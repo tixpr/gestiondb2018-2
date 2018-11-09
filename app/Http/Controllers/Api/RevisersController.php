@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Revisers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Http\Resources\Api\RevisersResource;
 class RevisersController extends Controller
 {
      /**
@@ -15,7 +15,7 @@ class RevisersController extends Controller
      */
     public function index()
     {
-        return Revisers::all();
+        return RevisersResource::collection(Revisers::all());
     }
     /**
      * Store a newly created resource in storage.
@@ -36,7 +36,7 @@ class RevisersController extends Controller
      */
     public function show($id)
     {
-        return Revisers::find($id);
+        return new RevisersResource(Revisers::find($id));
     }
     /**
      * Update the specified resource in storage.

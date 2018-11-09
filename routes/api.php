@@ -49,4 +49,11 @@ Route::namespace('Api')->group(function(){
                                 Route::put('{id}','RevisersController@update');
                                 Route::delete('{id}','RevisersController@destroy');
                                     });
+                                    Route::prefix('PpReports')->group(function(){
+                                        Route::get('/','PpReportsController@index');
+                                        Route::post('/','PpReportsController@store');
+                                        Route::get('{id}','PpReportsController@show');
+                                        Route::put('{id}','PpReportsController@update');
+                                        Route::delete('{id}','PpReportsController@destroy');
+                                            });
 });

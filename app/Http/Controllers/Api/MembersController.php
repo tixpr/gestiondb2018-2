@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Members;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Http\Resources\Api\MembersResource ;
 class MembersController extends Controller
 {
      /**
@@ -15,7 +15,7 @@ class MembersController extends Controller
      */
     public function index()
     {
-        return Members::all();
+        return MembersResource::collection(Members::all());
     }
     /**
      * Store a newly created resource in storage.
@@ -36,7 +36,7 @@ class MembersController extends Controller
      */
     public function show($id)
     {
-        return Members::find($id);
+        return new MembersResource(Members::find($id));
     }
     /**
      * Update the specified resource in storage.

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Mentors;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Http\Resources\Api\MentorsResource;
 class MentorsController extends Controller
 {
      /**
@@ -15,7 +15,7 @@ class MentorsController extends Controller
      */
     public function index()
     {
-        return Mentors::all();
+        return MentorsResource::collection(Mentors::all());
     }
     /**
      * Store a newly created resource in storage.
@@ -36,7 +36,7 @@ class MentorsController extends Controller
      */
     public function show($id)
     {
-        return Mentors::find($id);
+        return new MembersResource(Mentors::find($id));
     }
     /**
      * Update the specified resource in storage.

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\PpReports;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Http\Resources\Api\PpReportsResource;
 class PpReportsController extends Controller
 {
     /**
@@ -15,7 +15,7 @@ class PpReportsController extends Controller
      */
     public function index()
     {
-        return PpReports::all();
+        return PpReportsResource::collection(PpReports::all());
     }
     /**
      * Store a newly created resource in storage.
@@ -36,7 +36,7 @@ class PpReportsController extends Controller
      */
     public function show($id)
     {
-        return PpReports::find($id);
+        return new PpReportsResource(PpReports::find($id));
     }
     /**
      * Update the specified resource in storage.
