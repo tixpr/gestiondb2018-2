@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\PpProjection;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\ProjectionResource;
 
 class PpProjectionController extends Controller
 {
@@ -14,7 +16,7 @@ class PpProjectionController extends Controller
      */
     public function index()
     {
-        return PpProjection::all();
+        return ProjectionResource::collection(PpProjection::all());
     }
 
    
@@ -38,7 +40,7 @@ class PpProjectionController extends Controller
      */
     public function show($id)
     {
-        return PpProjection::find($id);
+        return new Projection(PpProjection::find($id));
     }
 
     public function update(Request $request, $id)
