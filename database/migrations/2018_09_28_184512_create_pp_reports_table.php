@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMentorsTable extends Migration
+class CreatePpReportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateMentorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('mentors', function (Blueprint $table) {
-            $table->bigincrements('id');
+        Schema::create('pp_reports', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedTinyInteger('type');
+            $table->timestamps();
             $table->unsignedBigInteger('pp_projections_id');
             $table->foreign('pp_projections_id')->references('id')->on('pp_projections');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->timestamps();
-            $table->date('create_at');
+
         });
     }
 
@@ -31,6 +30,6 @@ class CreateMentorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mentors');
+        Schema::dropIfExists('pp_reports');
     }
 }
