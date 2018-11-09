@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-
+use App\Models\PpMember;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
