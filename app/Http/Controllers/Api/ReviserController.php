@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Reviser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Http\Resources\Api\RevisersResource;
 class ReviserController extends Controller
 {
     /**
@@ -14,7 +14,7 @@ class ReviserController extends Controller
      */
     public function index()
     {
-        return Reviser::all();
+        return RevisersResource::collection(Reviser::all());
     }
 
    
@@ -37,7 +37,7 @@ class ReviserController extends Controller
      */
     public function show($id)
     {
-        return Reviser::find($id);
+        return new RevisersResource(Reviser::find($id));
     }
 
     

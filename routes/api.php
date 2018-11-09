@@ -27,7 +27,7 @@ Route::namespace('Api')->group( function(){
         Route::put('{id}','PpProjectionController@update');
         Route::delete('{id}','PpProjectionController@destroy');
     });
-    Route::prefix('PpReportController')->group(function(){
+    Route::prefix('PpReport')->group(function(){
         Route::get('/','PpReportController@index');
         Route::post('/','PpReportController@store');
         Route::get('{id}','PpReportController@show');
