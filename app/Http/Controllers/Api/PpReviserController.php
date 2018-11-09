@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\PpReviser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\PpReviserResurce ;
 
 class PpReviserController extends Controller
 {
@@ -14,7 +15,7 @@ class PpReviserController extends Controller
      */
     public function index()
     {
-        return PpReviser::all();
+        return PpReviserResurce::collection(PpReviser::all());
     }
 
 
@@ -37,7 +38,7 @@ class PpReviserController extends Controller
      */
     public function show($id)
     {
-        return PpReviser::find($id);
+        return new PpReviserResurce(PpReviser::find($id));
     }
 
 
