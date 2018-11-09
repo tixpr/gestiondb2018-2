@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\PpReport;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\PpReportAdmin as PpReportResource;
 
 class PpReportController extends Controller
 {
@@ -14,7 +15,7 @@ class PpReportController extends Controller
      */
     public function index()
     {
-        return PpReport::all();
+        return PpReportResource::collection(PpReport::all());
     }
 
     /**
@@ -36,7 +37,7 @@ class PpReportController extends Controller
      */
     public function show($id)
     {
-        return PpReport::find($id);
+        return new PpReportResource(PpReport::find($id));
     }
 
     /**

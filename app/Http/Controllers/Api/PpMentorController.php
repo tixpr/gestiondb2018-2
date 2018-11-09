@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\PpMentor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\PpMentorAdmin as PpMentorResource;
 
 class PpMentorController extends Controller
 {
@@ -14,7 +15,7 @@ class PpMentorController extends Controller
      */
     public function index()
     {
-        return PpMentor::all();
+        return PpMentorResource::collection(PpMentor::all());
     }
 
     /**
@@ -36,7 +37,7 @@ class PpMentorController extends Controller
      */
     public function show($id)
     {
-        return PpMentor::find($id);
+        return new PpMentorResource(PpMentor::find($id));
     }
 
     /**
