@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\PpMember;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\MemberResource;
 
 class PpMemberController extends Controller
 {
@@ -15,7 +16,7 @@ class PpMemberController extends Controller
      */
     public function index()
     {
-        return PpMember::all();
+        return MemberResource::collection(PpMember::all());
     }
 
     /**
@@ -37,7 +38,7 @@ class PpMemberController extends Controller
      */
     public function show($id)
     {
-        return PpMember::find($id);
+        return new MemberResource(PpMember::find($id));
     }
 
 
