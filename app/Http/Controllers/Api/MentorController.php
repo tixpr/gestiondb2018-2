@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Api;
+use App\Models\Mentor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\Mentor as MentorResource;
+
 
 class MentorController extends Controller
 {
@@ -15,7 +17,7 @@ class MentorController extends Controller
      */
     public function index()
     {
-        return Mentor::all();
+        return MentorResource::collection(Mentor::all());
     }
 
 
@@ -39,7 +41,7 @@ class MentorController extends Controller
      */
     public function show($id)
     {
-        return Mentor::find($id);
+        return new MentorResource(Mentor::find($id));
     }
 
  

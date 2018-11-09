@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\Member as MemberResource;
+
 
 class MemberController extends Controller
 {
@@ -14,7 +17,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        return Member::all();
+        return MemberResource::collection(Member::all());
     }
 
    
@@ -37,7 +40,7 @@ class MemberController extends Controller
      */
     public function show($id)
     {
-        return Member::find($id);
+        return new MemberResource(Member::find($id));
     }
 
     /**
