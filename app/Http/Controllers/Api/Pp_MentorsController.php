@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\PpMentors;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\MentorsResource;
 
 class Pp_MentorsController extends Controller
 {
@@ -15,7 +16,7 @@ class Pp_MentorsController extends Controller
      */
     public function index()
     {
-        return User::all();
+        return MentorsResource::collection(PpMentors::all());
     }
 
     /**
@@ -26,7 +27,7 @@ class Pp_MentorsController extends Controller
      */
     public function store(Request $request)
     {
-        return User::create($request->all());
+        return PpMentors::create($request->all());
     }
 
     /**
@@ -37,7 +38,7 @@ class Pp_MentorsController extends Controller
      */
     public function show($id)
     {
-        return User::find($id);
+        return new MentorsResource(PpMentors::find($id));
     }
 
     /**
@@ -49,7 +50,7 @@ class Pp_MentorsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return User::find($id)->update($request->all());
+        return PpMentors::find($id)->update($request->all());
     }
 
     /**
@@ -60,6 +61,6 @@ class Pp_MentorsController extends Controller
      */
     public function destroy($id)
     {
-        return User::find($id)->delete();
+        return PpMentors::find($id)->delete();
     }
 }

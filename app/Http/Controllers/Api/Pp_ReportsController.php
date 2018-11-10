@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\PpReports;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\ReportsResource;
 
 class Pp_ReportsController extends Controller
 {
@@ -15,7 +16,7 @@ class Pp_ReportsController extends Controller
      */
     public function index()
     {
-        return User::all();
+        return ReportsResource::collection(PpReports::all());
     }
 
     /**
@@ -26,7 +27,7 @@ class Pp_ReportsController extends Controller
      */
     public function store(Request $request)
     {
-        return User::create($request->all());
+        return PpReports::create($request->all());
     }
 
     /**
@@ -37,7 +38,7 @@ class Pp_ReportsController extends Controller
      */
     public function show($id)
     {
-        return User::find($id);
+        return new ReportsResource(PpReports::find($id));
     }
 
     /**
@@ -49,7 +50,7 @@ class Pp_ReportsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return User::find($id)->update($request->all());
+        return PpReports::find($id)->update($request->all());
     }
 
     /**
@@ -60,6 +61,6 @@ class Pp_ReportsController extends Controller
      */
     public function destroy($id)
     {
-        return User::find($id)->delete();
+        return PpReports::find($id)->delete();
     }
 }

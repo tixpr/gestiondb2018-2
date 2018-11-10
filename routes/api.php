@@ -21,7 +21,7 @@ Route::namespace('Api')->group(function(){
         Route::delete('{id}','UserController@destroy');
     });
     
-    Route::prefix('user')->group(function(){
+    Route::prefix('revisers')->group(function(){
         Route::get('/','Pp_RevisersController@index');
         Route::post('/','Pp_RevisersController@store');
         Route::get('{id}','Pp_RevisersController@show');
