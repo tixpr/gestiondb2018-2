@@ -13,6 +13,11 @@ class PpProjection extends Model
      * @var string
      */
     protected $table = 'pp_projections';
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
         'title',
          'organization',

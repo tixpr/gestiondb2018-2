@@ -23,6 +23,6 @@ class UserTableSeeder extends Seeder
                             'is_valid' => true 
                                     ]);
                     }
-        //
+         
     }
 }

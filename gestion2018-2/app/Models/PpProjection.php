@@ -4,28 +4,28 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Mentors extends Model
+class PpProjection extends Model
 {
-     /**
+    /**
      * The table associated with the model.
      *
-     * @var string
+     * @var array
      */
-    protected $table = 'mentors';
+    protected $table = 'pp_projections';
     protected $fillable = [
-        
-         'user_id',
-         'pp_projections_id'
-         
+        'title', 
+        'organization',
+        'exit_at',
+        'is_exit',
+        'is_practice',
+        'user_id'
     ];
-     /**
+    /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
     protected $hidden = [
-        'id',
-        'created_at'
-
-     ];
+        'id'
+    ];
 }

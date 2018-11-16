@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Mentor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class MentorController extends Controller
 {
-   /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

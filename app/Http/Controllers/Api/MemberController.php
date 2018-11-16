@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -39,7 +40,7 @@ class MemberController extends Controller
         return Member::find($id);
     }
 
-  
+
     /**
      * Update the specified resource in storage.
      *

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Reviser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class ReviserController extends Controller
 {
-     /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -63,3 +64,4 @@ class ReviserController extends Controller
         return Reviser::find($id)->delete();
     }
 }
+
