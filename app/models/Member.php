@@ -4,32 +4,29 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PpMember extends Model
+class Member extends Model
 {
-     /**
+    /**
      * The table associated with the model.
      *
-     * @var string
+     * @var array
      */
-    protected $table = 'pp_members';
-     /**
+    protected $table = 'members';
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'pp_projection_id',
-        'user_id'
-       
+        'user_id',
+        'pp_projections_id'
     ];
-
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
     protected $hidden = [
-        'id' 
+        'id'
     ];
-    public $timestamps = false;
 }

@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-
+use App\Models\Mentor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\MentorResource;
 
-class PpMentorController extends Controller
+class MentorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,10 @@ class PpMentorController extends Controller
      */
     public function index()
     {
-        return PpMentor::all();
+        return MentorResource::collection(Mentor::all());
     }
+
+    
 
     /**
      * Store a newly created resource in storage.
@@ -25,7 +28,7 @@ class PpMentorController extends Controller
      */
     public function store(Request $request)
     {
-        return  PpMentor::create($request->all());
+        return Mentor::create($request->all());
     }
 
     /**
@@ -36,20 +39,13 @@ class PpMentorController extends Controller
      */
     public function show($id)
     {
-        return PpMentor::find($id);
+        return new MentorResource(Mentor::find($id));
     }
 
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, $id)
     {
-        return PpMentor::find($id)->update($request->all());
+        return Mentor::find($id)->update($request->all());
     }
 
     /**
@@ -60,6 +56,6 @@ class PpMentorController extends Controller
      */
     public function destroy($id)
     {
-        return PpMentor::find($id)->delete();
+        return Mentor::find($id)->delete();
     }
 }

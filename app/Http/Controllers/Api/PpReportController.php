@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-
+use App\Models\PpReport;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\ReportResource;
 
 class PpReportController extends Controller
 {
@@ -14,10 +15,11 @@ class PpReportController extends Controller
      */
     public function index()
     {
-        return PpReport::all();
+        return ReportResource::collection(PpReport::all());
     }
 
     
+
     /**
      * Store a newly created resource in storage.
      *
@@ -26,7 +28,7 @@ class PpReportController extends Controller
      */
     public function store(Request $request)
     {
-        return  PpReport::create($request->all());
+        return PpReport::create($request->all());
     }
 
     /**
@@ -37,21 +39,16 @@ class PpReportController extends Controller
      */
     public function show($id)
     {
-        return PpReport::find($id);
+        return new ReportResource(PpReport::find($id));
     }
 
-    
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
+  
     public function update(Request $request, $id)
     {
         return PpReport::find($id)->update($request->all());
     }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -61,6 +58,5 @@ class PpReportController extends Controller
     public function destroy($id)
     {
         return PpReport::find($id)->delete();
-        
-    }  
+    }
 }

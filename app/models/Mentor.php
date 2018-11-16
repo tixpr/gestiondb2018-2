@@ -4,31 +4,30 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PpReviser extends Model
+class Mentor extends Model
 {
-    
-     /**
+    /**
      * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'pp_revisers';
-     /**
-     * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-       'user_id',
-       'pp_projection_id'
-    ];
+    
+    public $timestamps=false;
+    protected $fillable = [ 
+        'user_id',
+        'pp_projection_id'
+        
+        
 
+        
+    ];
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
     protected $hidden = [
-        'id' 
+        'id',
+        'created_at'
     ];
 }

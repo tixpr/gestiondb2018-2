@@ -6,17 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class PpProjection extends Model
 {
-     /**
+    /**
      * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'pp_projections';
-     /**
-     * The attributes that are mass assignable.
      *
      * @var array
      */
+    protected $table = 'pp_projections';
     protected $fillable = [
         'title', 
         'organization',
@@ -25,13 +20,12 @@ class PpProjection extends Model
         'is_practice',
         'user_id'
     ];
-
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
     protected $hidden = [
-        'id' 
+        'id'
     ];
 }

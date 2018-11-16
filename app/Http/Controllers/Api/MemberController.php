@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-
+use App\Models\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\MemberResource;
 
-class PpMemberController extends Controller
+class MemberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,10 @@ class PpMemberController extends Controller
      */
     public function index()
     {
-        return PpMember::all();
+        return MemberResource::collection(Member::all());
     }
+
+    
 
     /**
      * Store a newly created resource in storage.
@@ -25,7 +28,7 @@ class PpMemberController extends Controller
      */
     public function store(Request $request)
     {
-        return  PpMember::create($request->all());
+        return Member::create($request->all());
     }
 
     /**
@@ -36,20 +39,13 @@ class PpMemberController extends Controller
      */
     public function show($id)
     {
-        return PpMember::find($id);
+        return new MemberResource(Member::find($id));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, $id)
     {
-        return PpMember::find($id)->update($request->all());
-        
+        return Member::find($id)->update($request->all());
     }
 
     /**
@@ -60,6 +56,6 @@ class PpMemberController extends Controller
      */
     public function destroy($id)
     {
-        return PpMember::find($id)->delete();
+        return Member::find($id)->delete();
     }
 }

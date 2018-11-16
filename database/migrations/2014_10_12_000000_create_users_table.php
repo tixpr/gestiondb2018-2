@@ -1,7 +1,9 @@
 <?php
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+
 class CreateUsersTable extends Migration
 {
     /**
@@ -12,15 +14,17 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('email',60)->unique();
+            $table->bigincrements('id');
+            $table->string('email',68)->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password',60);
             $table->string('username',200);
             $table->rememberToken();
-			$table->timestamps();
-			$table->boolean('is_valid')->default(false);
+            $table->timestamps();
+            $table->boolean('is_valid')->default(false);
         });
     }
+
     /**
      * Reverse the migrations.
      *

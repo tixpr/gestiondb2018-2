@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-
+use App\Models\Reviser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\ReviserResource;
 
-class PpReviserController extends Controller
+class ReviserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,20 +15,20 @@ class PpReviserController extends Controller
      */
     public function index()
     {
-        return PpReviser::all();
+        return ReviserResource::collection(Reviser::all());
     }
+
 
     /**
-     * Show the form for creating a new resource.
+     * Store a newly created resource in storage.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function store(Request $request)
     {
-        return  PpReviser::create($request->all());
+        return Reviser::create($request->all());
     }
-
-   
 
     /**
      * Display the specified resource.
@@ -37,20 +38,13 @@ class PpReviserController extends Controller
      */
     public function show($id)
     {
-        return PpReviser::find($id);
+        return new ReviserResource(Reviser::find($id));   
     }
 
-    
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        return PpReviser::find($id)->update($request->all());
+        return Reviser::find($id)->update($request->all());
     }
 
     /**
@@ -61,6 +55,6 @@ class PpReviserController extends Controller
      */
     public function destroy($id)
     {
-        return PpReviser::find($id)->delete();
+        return Reviser::find($id)->delete();
     }
 }

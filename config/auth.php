@@ -40,11 +40,12 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-
+    
         'api' => [
             'driver' => 'passport',
             'provider' => 'users',
         ],
+    
     ],
 
     /*
@@ -63,7 +64,6 @@ return [
     | Supported: "database", "eloquent"
     |
     */
-
 
     'providers' => [
         'users' => [
@@ -92,14 +92,11 @@ return [
     |
     */
 
-    
     'passwords' => [
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
-
-
         ],
     ],
 
