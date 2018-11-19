@@ -15,6 +15,7 @@ class ReportResource extends JsonResource
     public function toArray($request)
     {
         return [
+            
             'creado'=>$this ->created_at,
             'actualizado'=>$this->updated_at,
             'tipo'=>$this->tipo,

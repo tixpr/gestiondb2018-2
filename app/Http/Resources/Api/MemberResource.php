@@ -17,6 +17,7 @@ class MemberResource extends JsonResource
         return  [
             
             
+            
             'usuario'=>$this->user_id,
             'proyecto'=>$this ->pp_p_projection_id,
             'valido'=>$this->is_valid

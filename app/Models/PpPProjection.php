@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class PpPProjection extends Model
+
 {
     //
     protected $table='pp_p_projections';

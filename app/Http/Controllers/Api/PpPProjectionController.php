@@ -14,6 +14,7 @@ class PpPProjectionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    
     {
         
         return ProjectionResource::collection(PpPProjection::all());

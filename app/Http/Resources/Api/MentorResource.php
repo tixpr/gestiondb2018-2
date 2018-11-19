@@ -18,6 +18,7 @@ class MentorResource extends JsonResource
             'creado'=>$this ->created_at,
             
             'usuario'=>$this->user_id,
+          
             'proyecto'=>$this ->pp_p_projections_id,
             'valido'=>$this->is_valid
             ]; 

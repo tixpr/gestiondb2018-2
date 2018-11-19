@@ -15,6 +15,7 @@ class PpReportController extends Controller
      */
     public function index()
     {
+   
         return ReportResource::collection(PpReport::all());
     }
     

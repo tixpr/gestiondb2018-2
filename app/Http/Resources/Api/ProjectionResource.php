@@ -15,6 +15,7 @@ class ProjectionResource extends JsonResource
     public function toArray($request)
     {
         return [
+            
             'titulo'=>$this->title,
             'organizacion'=>$this ->organization,
             'usuario'=>$this->user_id,

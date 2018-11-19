@@ -37,6 +37,7 @@ class MemberController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    
     {
         return new MemberResource(Member::find($id));
     }

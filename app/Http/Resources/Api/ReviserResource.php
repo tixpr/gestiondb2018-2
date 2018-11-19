@@ -15,6 +15,7 @@ class ReviserResource extends JsonResource
     public function toArray($request)
     {
         return [
+           
             'creado'=>$this ->created_at,
             'actualizado'=>$this->update_at,
             'usuario'=>$this->user_id,
