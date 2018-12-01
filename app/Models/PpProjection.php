@@ -5,19 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class PpProjection extends Model
-{
-    protected $table='pp_projections';
-     /**
+{/**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'pp_projections';
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'title',
-        'organization',
+        
+        'title', 
+        'organization', 
         'exit_at',
         'is_exit',
-        'is_practice'
+        'is_practice',
+        'user_id'
     ];
 
     /**

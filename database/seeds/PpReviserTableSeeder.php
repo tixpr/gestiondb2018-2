@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PpReportTableSeeder extends Seeder
+class PpReviserTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,11 +12,12 @@ class PpReportTableSeeder extends Seeder
     public function run()
     {
         for($i=1;$i<=500;$i++){
-            DB::table('pp_reports')->insert([
-                'type'              =>  random_int(0,1),
+            DB::table('pp_revisers')->insert([
                 'created_at'        =>  now(),
                 'updated_at'        =>  now(),
-                'pp_projections_id' =>  random_int(1,2000)
+                'user_id'           =>  random_int(1,1000),
+                'pp_projections_id'  =>  random_int(1,2000)
+
             ]);
         }
     }

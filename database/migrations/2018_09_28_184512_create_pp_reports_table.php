@@ -4,23 +4,22 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreatePpReportsTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
-     */ 
+     */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('pp_reports', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('email',60)->unique();
-            $table->string('password',60);
-            $table->string('username',200);
-            $table->rememberToken();
+            $table->unsignedTinyInteger('type');
             $table->timestamps();
-            $table->boolean('is_valid')->default(false);
+            $table->unsignedBigInteger('pp_projections_id');
+            $table->foreign('pp_projections_id')->references('id')->on('pp_projections');
+
         });
     }
 
@@ -31,6 +30,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('pp_reports');
     }
 }

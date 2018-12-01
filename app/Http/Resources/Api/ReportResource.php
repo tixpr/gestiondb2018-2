@@ -4,7 +4,7 @@ namespace App\Http\Resources\Api;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class UserAdmin extends JsonResource
+class ReportResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,11 +15,10 @@ class UserAdmin extends JsonResource
     public function toArray($request)
     {
         return [
-            'name'          => $this->username,
-            'correo'        => $this->email,
+            'tipo'     => $this->type,
             'creado'        => $this->created_at,
             'actualizado'   => $this->updated_at,
-            'validado'      => $this->is_valid
+            'proyecto'  =>$this->pp_projections_id
         ];
     }
 }

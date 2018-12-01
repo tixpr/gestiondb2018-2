@@ -6,14 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class PpReport extends Model
 {
-     protected $table='pp_reports';
-     /**
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'pp_reports';
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'type'
+        
+        'type', 
+        'pp_projections_id', 
+                     
     ];
 
     /**
@@ -24,4 +32,5 @@ class PpReport extends Model
     protected $hidden = [
         'id'
     ];
+    public $timestamps =false;
 }
